@@ -5,13 +5,13 @@
             "name": "Debug @ Mac/Linux",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceRoot}/out/helloworld@starterkit/binary/helloworld@starterkit.elf",
+            "program": "${workspaceRoot}/out/mxchip.IOT_AT3080_demo@saml21_iot_sk/binary/mxchip.IOT_AT3080_demo@saml21_iot_sk.elf",
             "args": [],
             "stopAtEntry": true,
             "cwd": "${workspaceRoot}",
             "environment": [],
             "externalConsole": true,
-            "miDebuggerServerAddress": "localhost:4242",
+            "miDebuggerServerAddress": "localhost:3333",
             "serverLaunchTimeout": 2000,
             "targetArchitecture": "ARM",
             "setupCommands": [
@@ -19,38 +19,38 @@
                     "text": "cd ${workspaceRoot}"
                 },
                 {
-                    "text": "source .gdbinit"
+                    "text": "target remote localhost:3333"
                 },
                 {
-                    "text": "target remote localhost:4242"
-                },
-                {
-                    "text": "file out/helloworld@starterkit/binary/helloworld@starterkit.elf"
+                    "text": "file out/mxchip.IOT_AT3080_demo@saml21_iot_sk/binary/mxchip.IOT_AT3080_demo@saml21_iot_sk.elf"
                 },
                 {
                     "text": "break application_start"
+                },
+                {
+                    "text": "monitor reset halt"
                 }
             ],
             "customLaunchSetupCommands": [],
             "launchCompleteCommand": "exec-run",
             "osx": {
                 "MIMode": "gdb",
-                "miDebuggerPath": "arm-none-eabi-gdb"
+                "miDebuggerPath": "/Users/william/Develop/aos-program/AliOS-Things/build/compiler/gcc-arm-none-eabi/OSX/bin/arm-none-eabi-gdb"
             },
             "linux": {
                 "MIMode": "gdb",
-                "miDebuggerPath": "arm-none-eabi-gdb"
+                "miDebuggerPath": "/Users/william/Develop/aos-program/AliOS-Things/build/compiler/gcc-arm-none-eabi/OSX/bin/arm-none-eabi-gdb"
             },
             "windows": {
                 "MIMode": "gdb",
-                "miDebuggerPath": "arm-none-eabi-gdb.exe"
+                "miDebuggerPath": "/Users/william/Develop/aos-program/AliOS-Things/build/compiler/gcc-arm-none-eabi/OSX/bin/arm-none-eabi-gdb.exe"
             }
         },
         {
             "name": "Debug @ Windows",
             "type": "cppdbg",
             "request": "launch",
-            "program": "D:\\work\\AliOS-Things\\out\\helloworld@starterkit\\binary\\helloworld@starterkit.elf",
+            "program": "D:\\work\\AliOS-Things\\out\\mxchip.IOT_AT3080_demo@saml21_iot_sk\\binary\\mxchip.IOT_AT3080_demo@saml21_iot_sk.elf",
             "args": [],
             "stopAtEntry": true,
             "cwd": "${workspaceRoot}",
@@ -70,7 +70,7 @@
                     "text": "target remote localhost:4242"
                 },
                 {
-                    "text": "file out/helloworld@starterkit/binary/helloworld@starterkit.elf"
+                    "text": "file out/mxchip.IOT_AT3080_demo@saml21_iot_sk/binary/mxchip.IOT_AT3080_demo@saml21_iot_sk.elf"
                 },
                 {
                     "text": "break application_start"
@@ -80,15 +80,15 @@
             "launchCompleteCommand": "exec-run",
             "osx": {
                 "MIMode": "gdb",
-                "miDebuggerPath": "arm-none-eabi-gdb"
+                "miDebuggerPath": "/Users/william/Develop/aos-program/AliOS-Things/build/compiler/arm-none-eabi-5_4-2016q3-20160926/OSX/bin/arm-none-eabi-gdb"
             },
             "linux": {
                 "MIMode": "gdb",
-                "miDebuggerPath": "arm-none-eabi-gdb"
+                "miDebuggerPath": "/Users/william/Develop/aos-program/AliOS-Things/build/compiler/arm-none-eabi-5_4-2016q3-20160926/OSX/bin/arm-none-eabi-gdb"
             },
             "windows": {
                 "MIMode": "gdb",
-                "miDebuggerPath": "arm-none-eabi-gdb.exe"
+                "miDebuggerPath": "/Users/william/Develop/aos-program/AliOS-Things/build/compiler/arm-none-eabi-5_4-2016q3-20160926/OSX/bin/arm-none-eabi-gdb.exe"
             }
         }
     ]

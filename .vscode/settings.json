@@ -1,7 +1,7 @@
 {
     "aliosStudio.inner.yosBin": "aos",
     "aliosStudio.hardware.board": "mk3060",
-    "aliosStudio.name": "alinkapp",
+    "aliosStudio.name": "helloworld",
     "aliosStudio.buildList": [
         {"name": "clean"},
         {"name": "helloworld@starterkit"},
@@ -11,5 +11,22 @@
     "aliosStudio.build.multiBin": false,
     "aliosStudio.build.multiBinTarget": "app",
     "aliosStudio.flashAllBin": false,
-    "aliosStudio.isAosSource": true
+    "aliosStudio.isAosSource": true,
+    "files.associations": {
+        "*.tcc": "c",
+        "sstream": "c",
+        "streambuf": "c",
+        "uart.h": "c",
+        "hal.h": "c",
+        "hpl_core.h": "c",
+        "hpl_core_port.h": "c",
+        "core_cm0.h": "c",
+        "log.h": "c",
+        "k_api.h": "c",
+        "saml21.h": "c",
+        "timer.h": "c",
+        "k_task.h": "c",
+        "stdlib.h": "c",
+        "stdio.h": "c"
+    }
 }
