@@ -60,6 +60,8 @@ void usr_long_pressed_handler(void)
 int application_start(int argc, char *argv[])
 {
 	mx_status err = kNoErr;
+
+	app_log("AliOS started...");
 	
 	drv_board_init();
 	drv_board_test();

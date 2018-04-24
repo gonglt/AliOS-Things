@@ -219,7 +219,7 @@ void trace_start(void)
 #else
 void trace_start(void)
 {
-    printf("trace config close!!!\r\n");
+    //printf("trace config close!!!\r\n");
 }
 #endif /* Trace end*/
 #else
