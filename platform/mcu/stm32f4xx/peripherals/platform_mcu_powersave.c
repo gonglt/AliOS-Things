@@ -5,7 +5,7 @@
 //#include "crt0.h"
 #include "platform_init.h"
 
-#if 0
+
 /******************************************************
 *                      Macros
 ******************************************************/
@@ -23,7 +23,7 @@
 #define RTC_INTERRUPT_EXTI_LINE       EXTI_Line22
 #define WUT_COUNTER_MAX               0xFFFF
 #define CK_SPRE_CLOCK_SOURCE_SELECTED 0xFFFF
-
+#if 0
 /******************************************************
 *                   Enumerations
 ******************************************************/
@@ -381,7 +381,7 @@ static unsigned long stop_mode_power_down_hook( unsigned long sleep_ms )
 }
 #endif /* MICO_DISABLE_MCU_POWERSAVE */
 
-
+#else
 void platform_mcu_enter_standby(uint32_t secondsToWakeup)
 { 
   platform_rtc_time_t time;
@@ -443,7 +443,7 @@ MICO_RTOS_DEFINE_ISR( RTC_WKUP_irq )
 }
 #endif
 
-#else
+
 OSStatus platform_mcu_powersave_disable( void )
 {
     return 0;

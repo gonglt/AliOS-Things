@@ -38,7 +38,7 @@ GLOBAL_DEFINES += CONFIG_AOS_CLI_STACK_SIZE=4096
 #GLOBAL_DEFINES += WITH_LWIP
 
 GLOBAL_INCLUDES += ../../arch/arm/armv7m/gcc/m4
-GLOBAL_INCLUDES += ../../../board/amebaz_dev
+#GLOBAL_INCLUDES += ../../../board/amebaz_dev
 GLOBAL_INCLUDES += .
 GLOBAL_INCLUDES += arch
 GLOBAL_INCLUDES += sdk
@@ -114,20 +114,21 @@ $(NAME)_INCLUDES += sdk/component/common/mbed/targets/hal/rtl8711b
                  -fno-short-enums
 
 GLOBAL_CFLAGS += -mcpu=cortex-m4 \
-                 -march=armv7-m \
                  -mthumb -mthumb-interwork \
                  -mlittle-endian \
                  -DCONFIG_PLATFORM_8711B \
                  -DM3\
                  -fno-short-enums                 
 
+ifeq ($(MICO_OS_PATH),)
 GLOBAL_CFLAGS += -w
+endif
 
-GLOBAL_LDFLAGS += -L $(SOURCE_ROOT)/platform/mcu/rtl8710bn
+GLOBAL_LDFLAGS += -L $(ALIOS_PATH)/platform/mcu/rtl8710bn
 #GLOBAL_LDFLAGS += -I $(SOURCE_ROOT)/platform/mcu/rtl8710bn
 # GLOBAL_LDFLAGS += -T $(SOURCE_ROOT)/platform/mcu/rtl8710bn/script/rlx8711B-symbol-v02-img2_xip1.ld                 
 #GLOBAL_LDFLAGS += $(SOURCE_ROOT)/platform/mcu/rtl8710bn/bin/boot_all.o
-GLOBAL_LDFLAGS += -L$(SOURCE_ROOT)/platform/mcu/rtl8710bn/lib/ -l_platform -l_wlan -l_wps -l_p2p -l_rtlstd
+GLOBAL_LDFLAGS += -L$(ALIOS_PATH)/platform/mcu/rtl8710bn/lib/ -l_platform -l_wlan -l_wps -l_p2p -l_rtlstd
 
 #GLOBAL_LDFLAGS += -mcpu=cortex-m4        \
                   -mthumb -mthumb-interwork \

@@ -57,11 +57,12 @@ GLOBAL_INCLUDES += include \
 GLOBAL_CFLAGS += -DSTM32F4xx 
 
 GLOBAL_CFLAGS += -mcpu=cortex-m4 \
-                 -march=armv7-m \
                  -mthumb -mthumb-interwork \
                  -mlittle-endian
 
+ifeq ($(MICO_OS_PATH),)
 GLOBAL_CFLAGS += -w
+endif
 
 
 ifeq ($(COMPILER),armcc)
@@ -93,6 +94,7 @@ $(NAME)_CFLAGS  += -Wno-unused-value -Wno-strict-aliasing
 
 
 $(NAME)_SOURCES := platform_init.c          \
+				   platform_common.c \
                    platform_vector_table.c \
                    hardfault_handler.c \
                    startup/startup_stm32f4xx.s \
@@ -146,7 +148,7 @@ ifneq ($(filter spi_flash_write, $(APP)),)
 ####################################################################################
 
 PRE_APP_BUILDS      += bootloader
-GLOBAL_LDFLAGS += -T platform/mcu/$(NAME)/$(TOOLCHAIN_NAME)/app_ram$(LINK_SCRIPT_SUFFIX)
+GLOBAL_LDFLAGS += -T $(ALIOS_PATH)/platform/mcu/$(NAME)/$(TOOLCHAIN_NAME)/app_ram$(LINK_SCRIPT_SUFFIX)
 GLOBAL_DEFINES      += __JTAG_FLASH_WRITER_DATA_BUFFER_SIZE__=16384
 GLOBAL_INCLUDES     += 
 
@@ -156,7 +158,7 @@ else
 ####################################################################################
 
 PRE_APP_BUILDS      += bootloader
-GLOBAL_LDFLAGS += -T  platform/mcu/$(NAME)/$(TOOLCHAIN_NAME)/app_with_bootloader$(LINK_SCRIPT_SUFFIX)
+GLOBAL_LDFLAGS += -T  $(ALIOS_PATH)/platform/mcu/$(NAME)/$(TOOLCHAIN_NAME)/app_with_bootloader$(LINK_SCRIPT_SUFFIX)
 GLOBAL_INCLUDES     += 
 
 endif # APP=spi_flash_write
