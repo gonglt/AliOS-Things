@@ -10,11 +10,11 @@ GLOBAL_INCLUDES += sdk-encap \
                   iotkit-system \
                           
 
-include framework/protocol/linkkit/iotkit/base/log/iot-log.mk
-include framework/protocol/linkkit/iotkit/base/utils/iot-utils.mk
-include framework/protocol/linkkit/iotkit/hal-impl/iot-hal.mk
-include framework/protocol/linkkit/iotkit/iotkit-system/iotkit-system.mk
-include framework/protocol/linkkit/iotkit/layers/iot-layers.mk
+include $(ALIOS_PATH)framework/protocol/linkkit/iotkit/base/log/iot-log.mk
+include $(ALIOS_PATH)framework/protocol/linkkit/iotkit/base/utils/iot-utils.mk
+include $(ALIOS_PATH)framework/protocol/linkkit/iotkit/hal-impl/iot-hal.mk
+include $(ALIOS_PATH)framework/protocol/linkkit/iotkit/iotkit-system/iotkit-system.mk
+include $(ALIOS_PATH)framework/protocol/linkkit/iotkit/layers/iot-layers.mk
 
 ifeq ($(COMPILER),gcc)
 $(NAME)_CFLAGS  += -Wall -Werror -Wno-unused-variable -Wno-unused-parameter -Wno-implicit-function-declaration
