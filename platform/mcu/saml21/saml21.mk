@@ -45,6 +45,8 @@ $(NAME)_SOURCES += Drivers/hal/utils/src/utils_assert.c \
                    Drivers/hal/utils/src/utils_list.c \
                    Drivers/hal/utils/src/utils_ringbuffer.c
                    
+$(NAME)_INCLUDES += Drivers/hal/utils/internal_include
+
 GLOBAL_INCLUDES += Drivers/hal/utils/include
 
 $(NAME)_SOURCES += Drivers/hpl/core/hpl_core_m0plus_base.c \

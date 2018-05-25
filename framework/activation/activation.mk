@@ -18,6 +18,10 @@ $(NAME)_PREBUILT_LIBRARY := ./Cortex-M4/activation.a
 endif
 endif
 
+ifeq ($(HOST_ARCH),Cortex-M0)
+$(NAME)_PREBUILT_LIBRARY := ./Cortex-M4/activation.a
+endif
+
 ifeq ($(HOST_ARCH),linux)
 $(NAME)_PREBUILT_LIBRARY := ./linux/activation.a
 endif

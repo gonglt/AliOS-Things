@@ -24,7 +24,7 @@ GLOBAL_DEFINES += __SAML21J18B__ MX_DEBUG
 DEFAULT_LINK_SCRIPT := Device_Startup/saml21j18b_flash$(LINK_SCRIPT_SUFFIX)
 
 
-sal ?= 0
+sal ?= 1
 ifeq (1,$(sal))
 $(NAME)_COMPONENTS += sal
 module ?= wifi.mk3060

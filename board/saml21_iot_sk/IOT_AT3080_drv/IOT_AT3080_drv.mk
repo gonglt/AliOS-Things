@@ -39,7 +39,7 @@ $(NAME)_SOURCES += helper/jsmn/jsmn.c \
                    helper/jsmn/json_generator.c \
                    helper/jsmn/json_utils.c \
                    helper/jsmn/json_wrappers.c
-GLOBAL_INCLUDES += helper/jsmn
+$(NAME)_INCLUDES += helper/jsmn
 
 
 $(NAME)_SOURCES += drv_board.c drv_board_test.c 
