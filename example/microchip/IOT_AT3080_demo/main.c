@@ -39,7 +39,7 @@ btn_instance_t usr_btn =
 
 void usr_btn_isr(void)
 {
-	button_irq_handler(&usr_btn);
+	io_button_irq_handler(&usr_btn);
 }
 
 void usr_clicked_handler(void)
@@ -76,7 +76,7 @@ int application_start(int argc, char *argv[])
 	switch_task_init();
 	console_task_init();
 	
-	button_init(&usr_btn);
+	io_button_init(&usr_btn);
 	
 	while(1)
 	{
@@ -84,7 +84,7 @@ int application_start(int argc, char *argv[])
 		alisds_runloop();
 		SHT20_task();
 		switch_task();
-		button_srv(&usr_btn);
+		io_button_srv(&usr_btn);
 		krhino_task_yield();
 	}
 	

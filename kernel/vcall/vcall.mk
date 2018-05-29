@@ -5,6 +5,7 @@ $(NAME)_MBINS_TYPE := share
 
 ifeq ($(MICO_OS_PATH),)
 GLOBAL_INCLUDES += ./mico/include
+$(NAME)_SOURCES += mico/mico_rhino.c
 endif
 
 #default gcc
