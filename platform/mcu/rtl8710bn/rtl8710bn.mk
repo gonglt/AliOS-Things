@@ -143,13 +143,13 @@ GLOBAL_LDFLAGS += -L$(ALIOS_PATH)/platform/mcu/rtl8710bn/lib/ -l_platform -l_wla
 
 GLOBAL_LDFLAGS += -mcpu=cortex-m4        \
                   -mthumb\
-                  -g --specs=nano.specs \
                   -Os \
                   -nostartfiles \
                   -Wl,--no-enum-size-warning \
                   -Wl,--no-wchar-size-warning \
                   -Wl,--gc-sections \
-                  -Wl,--cref                 
+                  -Wl,--cref \
+                  $(CLIB_LDFLAGS_NANO_FLOAT)                 
 
 $(NAME)_CFLAGS  += -Wall -Werror -Wno-unused-variable -Wno-unused-parameter -Wno-implicit-function-declaration
 $(NAME)_CFLAGS  += -Wno-type-limits -Wno-sign-compare -Wno-pointer-sign -Wno-uninitialized
